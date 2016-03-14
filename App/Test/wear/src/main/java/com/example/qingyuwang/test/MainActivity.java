@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,6 +27,8 @@ public class MainActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
 
+
+        Log.d("TAG", "start shaker");
         Intent shaker = new Intent(getBaseContext(), Shake.class);
         startService(shaker);
 

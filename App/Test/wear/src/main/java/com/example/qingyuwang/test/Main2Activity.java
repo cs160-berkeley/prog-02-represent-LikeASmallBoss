@@ -25,10 +25,15 @@ public class Main2Activity extends Activity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        if (extras != null) {
-            int zipcode = extras.getInt("ZIP");
-            ((Helper) this.getApplication()).setZip(zipcode);
-        }
+
+        Intent shakeIntent = new Intent(getBaseContext(), Shake.class);
+        startService(shakeIntent);
+
+
+//        if (extras != null) {
+//            int zipcode = extras.getInt("ZIP");
+//            ((Helper) this.getApplication()).setZip(zipcode);
+//        }
     }
 
     public void toelection(View view){

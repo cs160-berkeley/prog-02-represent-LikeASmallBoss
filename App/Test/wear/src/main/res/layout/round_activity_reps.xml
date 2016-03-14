@@ -35,7 +35,7 @@
                 android:text="Michael Bloomberg"
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
-                android:id="@+id/textView4" />
+                android:id="@+id/firstname" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,14 +45,13 @@
                 android:textColor="@color/red"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
-                android:id="@+id/textView5" />
+                android:id="@+id/firstparty" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Learn More"
-                android:id="@+id/button3"
-                android:onClick="toact"
+                android:id="@+id/btn1"
                 android:layout_below="@+id/scrollView"
                 android:layout_gravity="center_horizontal"
                 android:layout_centerHorizontal="true" />
@@ -83,7 +82,7 @@
                 android:text="Michael Bloomberg"
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
-                android:id="@+id/textVi2ew4" />
+                android:id="@+id/secondname" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -93,14 +92,13 @@
                 android:textColor="@color/blue"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
-                android:id="@+id/textView15" />
+                android:id="@+id/secondparty" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Learn More"
-                android:id="@+id/button32"
-                android:onClick="toact"
+                android:id="@+id/btn2"
                 android:layout_below="@+id/scrollView"
                 android:layout_gravity="center_horizontal"
                 android:layout_centerHorizontal="true" />
@@ -130,7 +128,7 @@
                 android:text="Michael Bloomberg"
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
-                android:id="@+id/textViesw4" />
+                android:id="@+id/thirdname" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,13 +138,14 @@
                 android:textColor="@color/black_54p"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
-                android:id="@+id/textVfiew5" />
+                android:id="@+id/thirdparty" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Learn More"
-                android:id="@+id/butdton3"
+                android:id="@+id/btn3"
+                android:onClick="toact3"
                 android:layout_below="@+id/scrollView"
                 android:layout_gravity="center_horizontal"
                 android:layout_centerHorizontal="true" />

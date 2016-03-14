@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFAEA"
+    tools:context="com.example.qingyuwang.test.reps"
+    tools:deviceIds="wear_round">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/imageVi3ew2"
+                android:src="@drawable/politician1"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Michael Bloomberg"
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/rep_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Democratic"
+                android:textColor="@color/blue"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:id="@+id/rep_party" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Learn More"
+                android:id="@+id/button32"
+                android:onClick="toact"
+                android:layout_below="@+id/scrollView"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" "
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:id="@+id/dtextViewdd15" />
+        </LinearLayout>
+
+
+
+</RelativeLayout>

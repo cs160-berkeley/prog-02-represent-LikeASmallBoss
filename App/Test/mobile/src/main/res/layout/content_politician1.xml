@@ -22,14 +22,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:id="@+id/imageView2"
-            android:src="@drawable/politician1"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Party: Republic"
+            android:text="Party: "
             android:textStyle="bold"
             android:id="@+id/textView5" />
 
@@ -134,13 +126,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="America First Committee"
             android:id="@+id/textView1232" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="United States congressional committee"
-            android:id="@+id/textView22322" />
 
         <TextView
             android:layout_width="wrap_content"

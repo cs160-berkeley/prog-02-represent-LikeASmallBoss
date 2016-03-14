@@ -40,7 +40,7 @@ public class Shake extends WearableListenerService implements SensorEventListene
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
-        Toast.makeText(this, "My Service Created", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "My Shaker Service Created", Toast.LENGTH_LONG).show();
         Log.d("T", "sensor created");
         context = Shake.this.getApplicationContext();
     }
@@ -68,14 +68,22 @@ public class Shake extends WearableListenerService implements SensorEventListene
                 float speed = Math.abs(x+y+z - last_x - last_y - last_z)
                         / diffTime * 10000;
                 if (speed > SHAKE_THRESHOLD) {
-                    Random rand = new Random();
-                    int newzip = 10000 + rand.nextInt(90000);
-                    ((Helper) this.getApplication()).setZip(newzip);
-                    Intent intent = new Intent(this, Main2Activity.class);
-                    intent.putExtra("ZIP", newzip);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    Toast.makeText(context, "Random Zipcode: " + Integer.toString(newzip), Toast.LENGTH_LONG).show();
+//                    Random rand = new Random();
+//                    int newzip = 10000 + rand.nextInt(90000);
+//                    ((Helper) this.getApplication()).setZip(newzip);
+//                    Intent intent = new Intent(this, Main2Activity.class);
+//                    intent.putExtra("ZIP", newzip);
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    startActivity(intent);
+//                    Toast.makeText(context, "Random Zipcode: " + Integer.toString(newzip), Toast.LENGTH_LONG).show();
+
+                    Log.d("TAG", "shaked");
+                    Toast.makeText(this, "Shaked", Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(getBaseContext(), WatchToPhoneService.class);
+                    intent.putExtra("R", "R");
+                    startService(intent);
+
                 }
                 last_x = x;
                 last_y = y;

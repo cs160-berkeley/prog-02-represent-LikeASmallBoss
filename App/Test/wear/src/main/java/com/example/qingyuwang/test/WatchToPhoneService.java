@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.MessageApi;
@@ -47,18 +48,36 @@ public class WatchToPhoneService extends Service {
         Log.d("T", "on startcommand");
 
         Bundle extras = intent.getExtras();
-        final String candidateName = extras.getString("CANDIDATE");
+        if (extras.getString("CANDITATE") != null) {
+            final String candidateName = extras.getString("CANDIDATE");
+            Log.d("TAG", extras.getString("CANDIDATE"));
 
-        // Send the message with the cat name
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //first, connect to the apiclient
-                mApiClient.connect();
-                //now that you're connected, send a massage with the cat name
-                sendMessage("/" + candidateName, candidateName);
-            }
-        }).start();
+            // Send the message with the cat name
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    //first, connect to the apiclient
+                    mApiClient.connect();
+                    //now that you're connected, send a massage with the cat name
+                    sendMessage("/CANDIDATE", candidateName);
+                }
+            }).start();
+        } else if (extras.getString("R") != null) {
+            Log.d("T", "sending random");
+            Toast.makeText(this, "random", Toast.LENGTH_LONG).show();
+
+
+            // Send the message with the cat name
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    //first, connect to the apiclient
+                    mApiClient.connect();
+                    //now that you're connected, send a massage with the cat name
+                    sendMessage("/R", "R");
+                }
+            }).start();
+        }
 
         return START_STICKY;
     }

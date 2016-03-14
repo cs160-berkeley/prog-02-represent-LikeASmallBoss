@@ -8,6 +8,8 @@ import android.widget.Toast;
 import com.google.android.gms.wearable.MessageEvent;
 import com.google.android.gms.wearable.WearableListenerService;
 
+import java.nio.charset.StandardCharsets;
+
 
 public class WatchListenerService extends WearableListenerService {
 
@@ -22,13 +24,18 @@ public class WatchListenerService extends WearableListenerService {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
 
-        } else if (messageEvent.getPath().startsWith("/zip")) {
-            int newzip = Integer.parseInt(messageEvent.getPath().substring(4));
-            ((Helper) this.getApplication()).setZip(newzip);
+        } else if (messageEvent.getPath().startsWith("/info")) {
+
+
+            String data = new String(messageEvent.getData(), StandardCharsets.UTF_8);
+            Log.d("TAG", data);
+            String[] data_list = data.split(";");
+
+
+            ((Helper) this.getApplication()).setData(data_list);
             Intent intent = new Intent(this, Main2Activity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
-            Toast.makeText(this, "Zipcode: " + Integer.toString(newzip), Toast.LENGTH_LONG).show();
         }
 
     }
